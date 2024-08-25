@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -226,6 +225,17 @@ button:hover{
 
 
 /* gallery section*/
+.gallery_banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This makes the background image stay fixed while scrolling */
+    position: relative;
+}
+
+
 .gallery_section {
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/background.jpg);
     padding: 50px 0;
@@ -292,14 +302,24 @@ button:hover{
 
 /* Contact Us */
 
+.contact_us_banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This makes the background image stay fixed while scrolling */
+    position: relative;
+}
+
 
 .contact_form {
     padding: 20px; /* Padding inside the form */
-    margin: 1000px auto 10px auto; /* Margin to push the form down */
+    margin: 100px auto 10px auto; /* Margin to push the form down */
     max-width: 600px; /* Width of the form */
     box-shadow: none; /* Remove shadow */
     border: none; /* Remove border */
-    background: none; /* Remove background */
+    background: transparent; /* Remove background */
 }
 
 .contact_form h2 {
@@ -346,19 +366,92 @@ button:hover {
     background-color: #00796b;
 }
 
+/* Contact Details */
+.contact_details {
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333;
+}
+
+.contact_details h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact_details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
 /* Map Container */
 
 
+/* Map Container */
+.map {
+    width: 100%;
+    text-align: center; /* Center the text in the map container */
+    padding: 50px 0; /* Add some vertical padding for spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Add a background color for contrast */
+}
+
 .map_container {
-    margin: 50px auto 30px auto; /* Increased top margin to push the map further down */
+    display: inline-block; /* Allow the container to shrink to fit the map */
     max-width: 600px; /* Set a max-width for the container */
     border: 2px solid #ddd; /* Border around the map */
     border-radius: 10px; /* Rounded corners for the container */
     overflow: hidden; /* Ensure the map doesn’t overflow */
+    background: #fff; /* Optional: Set background color for better visibility */
 }
 
 .map_container iframe {
     width: 100%;
     height: 400px; /* Adjust the height as needed */
     border: none; /* Remove default border */
+}
+
+/* Footer */
+footer {
+    background-color: #009688; /* Footer background color */
+    padding: 40px 0; /* Padding for spacing */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align the content */
+}
+
+.footer_content {
+    max-width: 1200px; /* Restricts the content width */
+    margin: auto; /* Centers the content */
+}
+
+.footer_content p {
+    margin: 10px 0; /* Spacing between paragraphs */
+    font-size: 14px; /* Font size */
+    color: #fff; /* Text color */
+}
+
+.footer_content a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Spacing between social media icons */
+    font-size: 14px; /* Font size */
+}
+
+.footer_content a:hover {
+    color: #004d40; /* Hover color for links */
+}
+
+.social_media img {
+    width: 30px; /* Icon size */
+    height: auto; /* Keep aspect ratio */
+    margin: 0 10px; /* Spacing between icons */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social_media img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
