@@ -17,57 +17,56 @@
                 <li><a href="contact_us.html">Contact Us</a></li>
             </ul>
         </div>
-        <div class="content">
-            <h1>Contact Us</h1>
-            <p>We’d love to hear from you! Whether you have questions, feedback, or just want to chat about the beautiful beaches of the Philippines, drop us a message below or get in touch through the details provided.</p>
+        <div class="contact_container">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:info@beachesphilippines.com">info@beachesphilippines.com</a></p>
+            <p>Phone: +63 123 456 7890</p>
+            <p>Address: 123 Beachfront Avenue, Paradise City, Philippines</p>
+            
+            <div class="contact_content">
+                <div class="contact_form">
+                    <h3>Send Us a Message</h3>
+                    <form action="submit_form.php" method="post">
+                        <div class="form_group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="button"><span></span>Send Message</button>
+                    </form>
+                </div>
+    
+                <div class="map">
+                    <h3>Find Us</h3>
+                    <div class="map_container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.649688264283!2d123.9000150147681!3d12.879724190752347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a25b722c8c6377%3A0x2f57f5d1e60df5c1!2sPhilippines!5e0!3m2!1sen!2sus!4v1613566095678!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="contact_form">
-        <h2>Send Us a Message</h2>
-        <form action="submit_form.php" method="post">
-            <div class="form_group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form_group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form_group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form_group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
 
-    <div class="contact_details">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:info@beachesphilippines.com">info@beachesphilippines.com</a></p>
-        <p>Phone: +63 123 456 7890</p>
-        <p>Address: 123 Beachfront Avenue, Paradise City, Philippines</p>
-    </div>
-
-    <div class="map">
-        <h2>Find Us</h2>
-        <div class="map_container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.649688264283!2d123.9000150147681!3d12.879724190752347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a25b722c8c6377%3A0x2f57f5d1e60df5c1!2sPhilippines!5e0!3m2!1sen!2sus!4v1613566095678!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
 
     <footer>
         <div class="footer_content">
             <p>&copy; 2024 Top 10 Beaches in the Philippines. All rights reserved.</p>
-            <p>Contact us at: <a href="mailto:info@philbeaches.com">info@philbeaches.com</a></p>
+            <p>Contact us at:<a href="mailto:info@philbeaches.com">info@philbeaches.com</a></p>
             <div class="social_media">
-                <a href="#"><img src="images/facebook_icon.png" alt="Facebook"></a>
-                <a href="#"><img src="images/twitter_icon.png" alt="Twitter"></a>
-                <a href="#"><img src="images/instagram_icon.png" alt="Instagram"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
             </div>
         </div>
     </footer>
