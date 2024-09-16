@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Top 10 Beaches in the Philippines</title>
-    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="about_us_banner">
-    <script src="../js/header.js"></script>
-        <div class="contact_container">
+    <div class="content-contactus">
+         <div class="contact_container">
             <h2>Contact Information</h2>
             <p>Email: <a href="mailto:jirehandmissythebeach@gmail.com">jirehandmissythebeach@gmail.com</a></p>
             <p>Phone: +63 123 456 7890</p>
@@ -41,12 +40,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+       
     </div>
        
 
-                           <!-- <script src="footer.js"></script> -->
-
+ 
 
 
 

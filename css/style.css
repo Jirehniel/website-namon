@@ -7,18 +7,16 @@
 .about_us_banner {
     width: 100%;
     height: 100vh;
-    /*  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/background.jpg);*/
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/background.jpg');
-
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
 }
 
+
 .navbar {
-    width: 85%;
-    margin: auto;
+     width: 85%;
     padding: 35px 0;
     display: flex;
     align-items: center;
@@ -26,26 +24,30 @@
     position: relative;
     z-index: 1;
     font-size: large;
+  
+
 }
 
 .logo {
     width: 120px;
     cursor: pointer;
 }
+ 
 
 .navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
+ 
 }
 
 .navbar ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
 }
-
+ 
 .navbar ul li::after {
     content: '';
     height: 3px;
@@ -69,9 +71,68 @@
     text-align: center;
     color: #fff;
     font-family: "Cormorant Garamond", serif;
+    display: flex;
+    align-items: center;
+}
+.content-home {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+}
+ .content-home h1 {
+    font-size: 50px;
+    margin: 20px;
+    line-height: 0.5;
+}
+ .content-home p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    text-align: center;
+    color: #f1f1f1;
+}
+.content-about {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
 }
 
-.content h1 {
+.content-contactus {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+        
+}
+
+/* .content-aboutus h1 {
+    font-size: 50px;
+    margin: 20px;
+} */
+
+.content-contactus p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.content h1 {   
     font-size: 50px;
     margin: 20px;
 }
@@ -96,7 +157,6 @@ button {
     color: #ffffff;
     cursor: pointer;
     position: relative;
-    z-index: 1;
 }
 
 button:hover {
@@ -118,7 +178,7 @@ button span {
 button:hover span {
     width: 100%;
 }
-
+   
 .team_section h2 {
     font-size: 40px;
     padding-top: 10px;
@@ -133,8 +193,13 @@ button:hover span {
     flex-wrap: wrap;
 }
 
+
+.img_profile {
+    overflow: hidden;
+}
+
 .profile {
-    margin-top: 50px;
+  margin-top: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -190,8 +255,8 @@ button:hover span {
     padding: 50px 0;
     background-color: rgba(255, 255, 255, 0.85);
     text-align: center;
-    width: 100%;
-
+    width: 100%; 
+        
 }
 
 .gallery_section h2 {
@@ -211,27 +276,25 @@ button:hover span {
 }
 
 .gallery_item {
-    background-color: rgba(239, 239, 239, 0.3);
+     background-color: rgba(239, 239, 239, 0.3);
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 50px;
-    flex: 2;
+     margin-bottom: 50px;
+    flex:2;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
     transition: transform 0.3s ease;
-    color: white;
+   color: white;
 
 }
-
 .gallery_title {
     font-size: 20px;
-    color: #ffffff;
+    color: #ffffff; 
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .gallery_item:hover {
     transform: scale(1.05);
 }
@@ -250,7 +313,7 @@ button:hover span {
     transform: scale(1.1);
 }
 
-
+ 
 
 .gallery_item p {
     font-size: 16px;
@@ -285,33 +348,38 @@ button:hover span {
 
 .contact_container {
     padding: 20px;
-    margin: 0px auto;
     max-width: 1000px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #333;
     text-align: center;
-    height: 65%;
 }
 
+
 .contact_container h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #ffffff;
+    font-size: 22px;
+     color: #ffffff;
+         line-height: 0.0;
+
 }
 
 .contact_container p {
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    line-height: 0.6;
+    font-size:10px;
+     color: #ffffff;
+    line-height: 0.0;
+}
+
+.contact_container p a {
+    color: #1c056e; /* Change to the desired color */
+    text-decoration: none; /* Optional: remove the underline */
 }
 
 .contact_content {
     display: flex;
     justify-content: space-evenly;
     margin-top: 0px;
+    
 }
 
 .contact_form {
@@ -374,16 +442,12 @@ footer {
 }
 
 .social_media img {
-    width: 30px;
-    height: 20;
+    width: 40px;
+    height: 40px;
     margin: 0 10px;
     transition: transform 0.3s ease;
 }
 
 .social_media img:hover {
     transform: scale(1.1);
-}
-
-.img_profile {
-    overflow: hidden;
 }

@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Top 10 Beaches in the Philippines</title>
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-    <div class="about_us_banner">
-    <script src="../js/header.js"></script>
-        <div class="team_section">
+          <div class="content-about">
             <h2>Meet the Coders</h2>
             <div class="team_profiles">
+                <!-- Profile for Jireh -->
                 <div class="profile">
-                    <img src="../images/jireh.jpg" alt="Jireh's Picture" class="profile_img">
+                    <img src="images/jireh.jpg" alt="Jireh's Picture" class="profile_img">
                     <h3>Jireh</h3>
                     <p>Full-stack Developer with a passion for creating dynamic and user-friendly websites. Jireh loves exploring new technologies and bringing creative ideas to life through code.</p>
                     <div class="socials">
@@ -23,8 +21,9 @@
                         <a href="mailto:jirehniel.caballero@students.isatu.edu.ph">Email</a>
                     </div>
                 </div>
+                <!-- Profile for Missy -->
                 <div class="profile">
-                    <img src="../images/missy.jpg" alt="Missy's Picture" class="profile_img">
+                    <img src="images/missy.jpg" alt="Missy's Picture" class="profile_img">
                     <h3>Missy</h3>
                     <p>Front-end Developer with a knack for designing aesthetically pleasing and responsive websites. Missy focuses on the user experience, ensuring that every website is as beautiful as it is functional.</p>
                     <div class="socials">
@@ -35,13 +34,5 @@
                 </div>
             </div>    
         </div>
-</div>
-    <script src="../js/footer.js"></script>
-
 </body>
 </html>
-
-        
-        
-        
-        
