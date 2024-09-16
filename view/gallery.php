@@ -17,6 +17,7 @@
         <ul class="gallery_list">
             <li class="gallery_item">
                 <div class="gallery_title">Boracay Beach</div>
+                <!-- tanan nga img i-wrap mo sa div class nga img_profile -->
                 <div class="img_profile">
                     <img src="images/boracay.jpg">
                 </div>
