@@ -373,6 +373,7 @@ button:hover span {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #333;
     text-align: center;
+    height: 65%;
 }
 
 
@@ -395,7 +396,7 @@ button:hover span {
 }
 
 .contact_content {
-    display: center;
+    display: flex;
     justify-content: space-evenly;
     margin-top: 0px;
     
