@@ -20,13 +20,34 @@
             
           </div>
             
+<!-- Featured Beaches Section -->
+<div class="gallery_section">
+    <h2>FEATURED BEACHES</h2>
+    <ul class="gallery_list">
+        <?php if (!empty($featuredBeaches)): ?>
+            <?php foreach ($featuredBeaches as $beach): ?>
+                <li class="gallery_item">
+                    <div class="gallery_title"><?php echo htmlspecialchars($beach->name); ?></div>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($beach->image); ?>" alt="<?php echo $beach->name; ?>">
+                    <p><?php echo htmlspecialchars($beach->description); ?></p>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li class="gallery_text">
+                    <h2>No featured beaches available.</h2>
+ 
+        </li>
+        <?php endif; ?>
+    </ul>
+</div>
+
 
     <!-- Gallery Section -->
-    <div class="gallery_section">
-        <h2>HIGHLIGHTS BEACHES</h2>
-        <ul class="gallery_list">
+     <!-- <div class="gallery_section">
+        <h2>FEATURED BEACHES</h2>
+        <ul class="gallery_list"> -->
             <!-- Beach Item for Boracay -->
-            <li class="gallery_item">
+            <!-- <li class="gallery_item">
                 <div class="gallery_title">Boracay Beach</div>
                 <img src="images/boracay.jpg">
                 <p>Known for its powdery white sand and crystal-clear waters, Boracay is the epitome of a tropical paradise. Located in Malay, Aklan, Western Visayas. 
@@ -41,7 +62,7 @@
                 <a href="https://web.facebook.com/ElnidoPalawanPhilippines" target="_blank">Visit on Facebook</a></p>
             </li>
          </ul>
-    </div>
+    </div> -->
 
     <div class="about_us_banner">
 

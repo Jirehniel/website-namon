@@ -7,7 +7,8 @@
 	echo "<div>";				
 		include_once("Controller/controller.php");
 	$controller = new Controller();
-	$controller->getPage();	
+	$controller->getGallery();	
+	$controller->addMessage();
 	echo "</div>";		
 
 	echo "<div align='CENTER'>";

@@ -8,6 +8,13 @@
 </head>
 <body>
     <div class="content-contactus">
+              <?php if (isset($_SESSION['status'])): ?>
+            <div class="alert <?= $_SESSION['status'] == 'success' ? 'alert-success' : 'alert-error' ?>">
+                <?= $_SESSION['status'] == 'success' ? 'Message sent successfully!' : 'There was an error sending your message.' ?>
+                <button onclick="this.parentElement.style.display='none';">OK</button>
+            </div>
+            <?php unset($_SESSION['status']);  ?>
+        <?php endif; ?>
          <div class="contact_container">
             <h2>Contact Information</h2>
             <p>Email: <a href="mailto:jirehandmissythebeach@gmail.com">jirehandmissythebeach@gmail.com</a></p>
@@ -16,7 +23,7 @@
    <div class="contact_content">
      <div class="contact_form">
         <h3>Send Us a Message</h3>
-        <form action="submit_form.php" method="post">
+    <form action='sumbitform.php' method="POST">
             <div class="form_group">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
@@ -29,7 +36,8 @@
             <div class="form_group">
                 <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit"><span></span>Send Message</button>
+             <button type="submit" name="submit"><span></span>Send Message</button>
+
         </form>
     </div>
     
