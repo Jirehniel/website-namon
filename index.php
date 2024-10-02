@@ -7,7 +7,7 @@
 	echo "<div>";				
 		include_once("Controller/controller.php");
 	$controller = new Controller();
-	$controller->getGallery();	
+	$controller->navigatePages();	
 	$controller->addMessage();
 	echo "</div>";		
 

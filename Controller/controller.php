@@ -17,39 +17,44 @@ class Controller
         $this->featuredBeach = new FeaturedBeach();
     }
 
-    public function getGallery()
-    {		
-        $command = null;
+public function navigatePages() 
+{		
+    $command = null;
 
-       
-        if (isset($_REQUEST['command']))
-            $command = $_REQUEST['command'];
-
-        switch ($command)
-        {
-            case 0:
-            $featuredBeaches = $this->featuredBeach->getFeaturedBeaches();                 include_once('view/home.php');
-                break;
-            case 1:
-                include_once('view/about.php');
-                break;
-            case 2:
-                 $galleryData = $this->model->getGallery();
-                 include_once('view/gallery.php');
-                break;
-            case 3:
-                 include_once('view/contact_us.php');
-                break;
-                case 4:
-          include_once('view/sumbitform.php');
-                break;
-            default:
-                include_once('view/home.php');
-                break;
-        }
+    if (isset($_REQUEST['command'])) {
+        $command = $_REQUEST['command'];
     }
 
+    switch ($command) {
+        case 0:
+            $featuredBeaches = $this->getFeaturedBeaches();                 
+            include_once('view/home.php');
+            break;
+        case 1:
+            include_once('view/about.php');
+            break;
+        case 2:
+            $galleryData = $this->getGalleryData();  
+            include_once('view/gallery.php');
+            break;
+        case 3:
+            include_once('view/contact_us.php');
+            break;
+        case 4:
+            include_once('view/submitform.php');  
+            break;
+        default:
+            include_once('view/home.php');
+            break;
+    }
+}
 
+public function getGalleryData() {
+    return $this->model->getGallery();
+}
+public function getFeaturedBeaches(){
+    return $this->featuredBeach->getFeaturedBeaches();
+}
     
 
     public function addMessage() {
@@ -68,6 +73,6 @@ class Controller
             exit();
         }
     }
-}
 
- 
+
+}
