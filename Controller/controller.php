@@ -13,8 +13,8 @@ class Controller
         require_once('model/messages.php');
         $this->message = new MessageModel();
 
-        require_once('model/featured_beach.php');
-        $this->featuredBeach = new FeaturedBeach();
+        require_once('model/gallery.php');
+        $this->featuredBeach = new Model();
     }
 
 public function navigatePages() 
@@ -44,6 +44,7 @@ public function navigatePages()
             include_once('view/submitform.php');  
             break;
         default:
+        $featuredBeaches = $this->getFeaturedBeaches(); 
             include_once('view/home.php');
             break;
     }

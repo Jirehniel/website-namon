@@ -25,4 +25,16 @@ class Model
 			return $data;     
 	    }
 
+		 public function getFeaturedBeaches()
+    {
+        $data = array();
+        $queryGetFeatured = mysqli_query($this->db, "SELECT * FROM gallery WHERE featured = TRUE");
+
+        while ($getRow = mysqli_fetch_object($queryGetFeatured)) 
+        {
+            $data[] = $getRow;
+        }
+        return $data;
+    }
+
 }

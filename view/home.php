@@ -21,25 +21,24 @@
           </div>
             
 <!-- Featured Beaches Section -->
-<div class="gallery_section">
-    <h2>FEATURED BEACHES</h2>
-    <ul class="gallery_list">
-        <?php if (!empty($featuredBeaches)): ?>
-            <?php foreach ($featuredBeaches as $beach): ?>
-                <li class="gallery_item">
-                    <div class="gallery_title"><?php echo htmlspecialchars($beach->name); ?></div>
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($beach->image); ?>" alt="<?php echo $beach->name; ?>">
-                    <p><?php echo htmlspecialchars($beach->description); ?></p>
-                </li>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <li class="gallery_text">
+    <div class="gallery_section">
+        <h2>FEATURED BEACHES</h2>
+        <ul class="gallery_list">
+            <?php if (!empty($featuredBeaches)): ?>
+                <?php foreach ($featuredBeaches as $beach): ?>
+                    <li class="gallery_item">
+                        <div class="gallery_title"><?php echo htmlspecialchars($beach->name); ?></div>
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($beach->image_url); ?>" alt="<?php echo htmlspecialchars($beach->name); ?>">
+                        <p><?php echo htmlspecialchars($beach->description); ?></p>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li class="gallery_text">
                     <h2>No featured beaches available.</h2>
- 
-        </li>
-        <?php endif; ?>
-    </ul>
-</div>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
 
 
     <!-- Gallery Section -->
