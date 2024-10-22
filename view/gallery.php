@@ -19,7 +19,7 @@
          foreach ($galleryItems as $item) {
          ?>
             <li class="gallery_item">
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($item->image_url); ?>" alt="<?php echo $item->name; ?>">
+        <img src="<?php echo $item->image_url; ?>" alt="<?php echo $item->name; ?>">
               <div class="gallery_title"><?php echo $item->name; ?></div>
                 <p><?php echo $item->description; ?></p>
                 <?php if (!empty($item->google_maps_link)) { ?>
