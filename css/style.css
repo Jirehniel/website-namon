@@ -13,6 +13,31 @@
     background-attachment: fixed;
     position: relative;
 }
+.action-links {
+    display: flex;
+    gap: 10px; /* Space between the links */
+}
+
+.action-links a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.action-links a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .action-links {
+        flex-direction: column; /* Stack vertically */
+    }
+}
 
 
 .navbar {
@@ -409,6 +434,13 @@ button:hover span {
 .contact_form .form_group {
     margin-bottom: 20px;
 }
+ .checkbox-description {
+    margin-top: 5px; /* Space between the checkbox and description */
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #555; /* Gray color for the description */
+}
+
+
 
 .contact_form input,
 .contact_form textarea {

@@ -14,23 +14,35 @@
 <div class="gallery_section" >
             <h2>BEST BEACHES IN PHILIPPINES</h2>
        <ul class="gallery_list">
-          <?php     
-         $galleryItems = $this->model->getGallery();
-         foreach ($galleryItems as $item) {
-         ?>
-            <li class="gallery_item">
+   <?php     
+$galleryItems = $this->model->getGallery();
+foreach ($galleryItems as $item) {
+?>
+    <li class="gallery_item">
+      
         <img src="<?php echo $item->image_url; ?>" alt="<?php echo $item->name; ?>">
-              <div class="gallery_title"><?php echo $item->name; ?></div>
-                <p><?php echo $item->description; ?></p>
-                <?php if (!empty($item->google_maps_link)) { ?>
-                    <a href="<?php echo $item->google_maps_link; ?>" target="_blank">View on Google Maps</a>
-                <?php } ?>
-                <?php if (!empty($item->facebook_link)) { ?>
-                    <a href="<?php echo $item->facebook_link; ?>" target="_blank">Visit on Facebook</a>
-                <?php } ?>
-                    </li>
-            <?php
-        }
+        <div class="gallery_title"><?php echo $item->name; ?></div>
+        <p><?php echo $item->description; ?></p>
+        
+        <!-- View Links -->
+        <?php if (!empty($item->google_maps_link)) { ?>
+            <a href="<?php echo $item->google_maps_link; ?>" target="_blank">View on Google Maps</a>
+        <?php } ?>
+        <?php if (!empty($item->facebook_link)) { ?>
+            <a href="<?php echo $item->facebook_link; ?>" target="_blank">Visit on Facebook</a>
+        <?php } ?>
+
+        <!-- Edit and Delete Buttons -->
+ <div class="action-links">
+    <a href="index.php?command=editRec&galleryID=<?php echo $item->galleryID; ?>">Edit</a>
+    <a href="index.php?command=deleteRec&galleryID=<?php echo $item->galleryID; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+</div>
+ 
+
+    </li>
+<?php
+}
+?>
         ?>
          </ul>
            </div>

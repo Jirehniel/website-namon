@@ -28,7 +28,7 @@
                 <?php foreach ($featuredBeaches as $beach): ?>
                     <li class="gallery_item">
                         <div class="gallery_title"><?php echo htmlspecialchars($beach->name); ?></div>
-                        <img src ="<?php echo htmlspecialchars($beach->image_url); ?>" alt = "<?php echo htmlspecialchars($beach->namme); ?>">
+                        <img src = "<?php echo htmlspecialchars($beach->image_url); ?>" alt="<?php echo htmlspecialchars($beach->name); ?>">
                         <p><?php echo htmlspecialchars($beach->description); ?></p>
                     </li>
                 <?php endforeach; ?>
@@ -39,7 +39,7 @@
             <?php endif; ?>
         </ul>
     </div>
-
+ 
 
     <!-- Gallery Section -->
      <!-- <div class="gallery_section">

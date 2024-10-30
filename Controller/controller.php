@@ -43,10 +43,35 @@ public function navigatePages()
         case 4:
             include_once('view/submitform.php');  
             break;
+
+        case 'deleteRec':
+				$id=$_REQUEST['galleryID'];	
+				$result=$this->model->deleteRecord($id);
+ 				echo "<script> alert ('".$result."')
+					    window.location.href='index.php?command=2'
+					    </script>";						
+				break;
+        case 'editRec':
+             $id = $_REQUEST['galleryID'];
+             $galleryItem = $this->model->getGalleryItemByID($id);
+             include_once('view/edit_gallery.php');
+             break;
+        case 'saveRec':
+            $id=$_REQUEST['galleryID'];
+            $name=$_REQUEST['name'];
+            $description=$_REQUEST['description'];
+            $image_url = $_POST['image_url'];
+            $google_maps_link=$_REQUEST['google_maps_link'];
+            $facebook_link=$_REQUEST['facebook_link'];
+            $featured = isset($_POST['featured']) ? 1: 0;
+            $result=$this->model->updateRecord($id,$name,$description,$image_url,$google_maps_link,$facebook_link,$featured);            
+			header("Location: index.php?command=2");
+            exit();
+            break;
         default:
         $featuredBeaches = $this->getFeaturedBeaches(); 
             include_once('view/home.php');
-            break;
+            break;       
     }
 }
 
