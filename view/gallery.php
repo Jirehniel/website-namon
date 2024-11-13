@@ -11,6 +11,10 @@
             <h1>Explore More Best Beaches around the Philippines</h1>
             <p>Explore the breathtaking beaches of the Philippines through our curated gallery. Each image captures the beauty and essence of the country's most stunning coastlines. Scroll down to immerse yourself in the natural wonders that make the Philippines a must-visit destination.</p>
     </div>
+
+    
+    
+
 <div class="gallery_section" >
             <h2>BEST BEACHES IN PHILIPPINES</h2>
        <ul class="gallery_list">
@@ -37,7 +41,8 @@ foreach ($galleryItems as $item) {
     <a href="index.php?command=editRec&galleryID=<?php echo $item->galleryID; ?>">Edit</a>
     <a href="index.php?command=deleteRec&galleryID=<?php echo $item->galleryID; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
 </div>
- 
+
+
 
     </li>
 <?php
@@ -46,5 +51,10 @@ foreach ($galleryItems as $item) {
         ?>
          </ul>
            </div>
+           <div class="add-new-container">
+    <a href="index.php?command=addRec" class="add-new-link">
+        <span class="plus-icon">+</span> Add New Beach
+    </a>
+   </div>
 </body>
 </html>

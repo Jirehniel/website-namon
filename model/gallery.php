@@ -70,4 +70,11 @@ public function updateRecord($id,$name,$description,$image_url,$google_maps_link
     return $stmt->execute();
 }
 
+public function addRecord($name, $description, $image_url, $google_maps_link, $facebook_link, $featured)
+{
+    
+    $stmt = $this->db->prepare("INSERT INTO gallery (name, description, image_url, google_maps_link, facebook_link, featured) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssi', $name, $description, $image_url, $google_maps_link, $facebook_link, $featured);
+    return $stmt->execute();
+}
 }

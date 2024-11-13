@@ -43,6 +43,9 @@ public function navigatePages()
         case 4:
             include_once('view/submitform.php');  
             break;
+            case 'addRec':
+                include_once('view/add_gallery.php');
+                break;
 
         case 'deleteRec':
 				$id=$_REQUEST['galleryID'];	
@@ -68,6 +71,25 @@ public function navigatePages()
 			header("Location: index.php?command=2");
             exit();
             break;
+            case 'addNewRec':
+                
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $image_url = $_POST['image_url'];
+                $google_maps_link = $_POST['google_maps_link'];
+                $facebook_link = $_POST['facebook_link'];
+                $featured = isset($_POST['featured']) ? 1 : 0;
+    
+                $result = $this->model->addRecord($name, $description, $image_url, $google_maps_link, $facebook_link, $featured);
+                if ($result) {
+                  
+                    header("Location: index.php?command=2");
+                    exit();
+                } else {
+                   
+                    echo "There was an error adding the new gallery item.";
+                }
+                break;
         default:
         $featuredBeaches = $this->getFeaturedBeaches(); 
             include_once('view/home.php');

@@ -503,3 +503,27 @@ footer {
 .social_media img:hover {
     transform: scale(1.1);
 }
+
+.add-new-container {
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
+}
+
+.add-new-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-new-link:hover {
+    background-color: #0056b3;
+}
+
+.plus-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
