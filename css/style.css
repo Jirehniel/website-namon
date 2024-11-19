@@ -367,28 +367,6 @@ button:hover span {
     font-weight: 500;
 }
 
-.scroll_top_button {
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    background-color: #34979e;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 80%;
-}
-
-.scroll_top_button a {
-    color: white;
-    text-decoration: none;
-}
-
-.scroll_top_button a:hover {
-    color: #ccc;
-}
 
 .contact_container {
     padding: 20px;
@@ -529,54 +507,70 @@ footer {
 }
 
 
+/* Target only the button inside the search form */
+.search-container form button {
+    width: 200px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+}
 
-/* Container for the search form */
+.search-container form button:hover {
+    border: none; 
+}
+
+.search-container form button span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+.search-container form button:hover span {
+    width: 100%;
+}
+
+/* Optional: style the search input field */
+.search-container form input[type="text"] {
+    padding: 8px;               /* Padding inside the input */
+    font-size: 16px;            /* Font size */
+    width: 250px;               /* Set width for the input */
+    border-radius: 25px;        /* Rounded corners */
+    border: none;               /* No border */
+    outline: none;              /* Remove outline on focus */
+    color: white;               /* Text color */
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+}
+
+/* Style for the search container */
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
 }
-
 /* Style for the form */
-form {
+.search-container form {
     display: flex;
-    border: 2px solid #007bff;
-    border-radius: 25px;
-    padding: 10px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
-}
-
-/* Style for the input field */
-input[type="text"] {
-    width: 250px;
-    padding: 8px;
-    border: none;
-    border-radius: 25px;
-    margin-right: 10px;
-    font-size: 16px;
-    outline: none;
-}
-
-/* Style for the search button */
-button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-/* Button hover effect */
-button:hover {
-    background-color: #0056b3;
+    border: 2px solid #007bff;  /* Border around the form */
+    border-radius: 25px;        /* Rounded corners for form */
+    padding: 10px;               /* Padding around the form */
+    background-size: cover;      /* Cover the entire background */
 }
 
 /* Placeholder text style */
-input::placeholder {
-    color: #888;
-    font-style: italic;
+.search-container form input::placeholder {
+    color: #888;                /* Placeholder color */
+    font-style: italic;         /* Italic font style for placeholder */
 }
