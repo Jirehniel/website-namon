@@ -39,6 +39,7 @@
     }
 }
 
+
 .navbar {
      width: 85%;
     padding: 35px 0;
@@ -217,6 +218,7 @@ button:hover span {
     gap: 40px;
     flex-wrap: wrap;
 }
+
 
 .img_profile {
     overflow: hidden;
@@ -399,6 +401,7 @@ button:hover span {
     height: 65%;
 }
 
+
 .contact_container h2 {
     font-size: 22px;
      color: #ffffff;
@@ -436,6 +439,7 @@ button:hover span {
     font-size: 0.9em; /* Slightly smaller text */
     color: #555; /* Gray color for the description */
 }
+
 
 
 .contact_form input,
@@ -524,24 +528,14 @@ footer {
     margin-right: 5px;
 }
 
-/* Search Container Styling */
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* space from the top */
-    padding: 10px 20px; /* padding around the search box */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
-    border-radius: 50px; /* rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
-}
+
 
 /* Container for the search form */
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
 }
 
 /* Style for the form */
@@ -550,7 +544,7 @@ form {
     border: 2px solid #007bff;
     border-radius: 25px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
 }
 
 /* Style for the input field */
@@ -586,5 +580,3 @@ input::placeholder {
     color: #888;
     font-style: italic;
 }
-
-
