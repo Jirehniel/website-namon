@@ -6,7 +6,7 @@ class Controller
     public $featuredBeach = null;
 
     function __construct()
-    {		
+    {
         require_once('model/gallery.php');
         $this->model = new Model();
 
@@ -17,93 +17,97 @@ class Controller
         $this->featuredBeach = new Model();
     }
 
-public function navigatePages() 
-{		
-    $command = null;
+    public function navigatePages() 
+    {
+        $command = isset($_REQUEST['command']) ? $_REQUEST['command'] : null;
 
-    if (isset($_REQUEST['command'])) {
-        $command = $_REQUEST['command'];
-    }
-
-    switch ($command) {
-        case 0:
-            $featuredBeaches = $this->getFeaturedBeaches();                 
-            include_once('view/home.php');
-            break;
-        case 1:
-            include_once('view/about.php');
-            break;
-        case 2:
-            $galleryData = $this->getGalleryData();  
-            include_once('view/gallery.php');
-            break;
-        case 3:
-            include_once('view/contact_us.php');
-            break;
-        case 4:
-            include_once('view/submitform.php');  
-            break;
+        switch ($command) {
+            case 0:
+                $featuredBeaches = $this->getFeaturedBeaches();                 
+                include_once('view/home.php');
+                break;
+            case 1:
+                include_once('view/about.php');
+                break;
+            case 2:
+                // Default: Show all gallery items
+                $galleryItems = $this->model->getGallery();
+                include_once('view/gallery.php');
+                break;
+            case 3:
+                include_once('view/contact_us.php');
+                break;
+            case 4:
+                include_once('view/submitform.php');  
+                break;
             case 'addRec':
                 include_once('view/add_gallery.php');
                 break;
-
-        case 'deleteRec':
-				$id=$_REQUEST['galleryID'];	
-				$result=$this->model->deleteRecord($id);
- 				echo "<script> alert ('".$result."')
-					    window.location.href='index.php?command=2'
-					    </script>";						
-				break;
-        case 'editRec':
-             $id = $_REQUEST['galleryID'];
-             $galleryItem = $this->model->getGalleryItemByID($id);
-             include_once('view/edit_gallery.php');
-             break;
-        case 'saveRec':
-            $id=$_REQUEST['galleryID'];
-            $name=$_REQUEST['name'];
-            $description=$_REQUEST['description'];
-            $image_url = $_POST['image_url'];
-            $google_maps_link=$_REQUEST['google_maps_link'];
-            $facebook_link=$_REQUEST['facebook_link'];
-            $featured = isset($_POST['featured']) ? 1: 0;
-            $result=$this->model->updateRecord($id,$name,$description,$image_url,$google_maps_link,$facebook_link,$featured);            
-			header("Location: index.php?command=2");
-            exit();
-            break;
+            case 'deleteRec':
+                $id = $_REQUEST['galleryID'];    
+                $result = $this->model->deleteRecord($id);
+                echo "<script> alert ('".$result."')
+                    window.location.href='index.php?command=2'
+                    </script>";                        
+                break;
+            case 'editRec':
+                $id = $_REQUEST['galleryID'];
+                $galleryItem = $this->model->getGalleryItemByID($id);
+                include_once('view/edit_gallery.php');
+                break;
+            case 'saveRec':
+                $id = $_REQUEST['galleryID'];
+                $name = $_REQUEST['name'];
+                $description = $_REQUEST['description'];
+                $image_url = $_POST['image_url'];
+                $google_maps_link = $_REQUEST['google_maps_link'];
+                $facebook_link = $_REQUEST['facebook_link'];
+                $featured = isset($_POST['featured']) ? 1 : 0;
+                $result = $this->model->updateRecord($id, $name, $description, $image_url, $google_maps_link, $facebook_link, $featured);            
+                header("Location: index.php?command=2");
+                exit();
+                break;
             case 'addNewRec':
-                
                 $name = $_POST['name'];
                 $description = $_POST['description'];
                 $image_url = $_POST['image_url'];
                 $google_maps_link = $_POST['google_maps_link'];
                 $facebook_link = $_POST['facebook_link'];
                 $featured = isset($_POST['featured']) ? 1 : 0;
-    
+
                 $result = $this->model->addRecord($name, $description, $image_url, $google_maps_link, $facebook_link, $featured);
                 if ($result) {
-                  
                     header("Location: index.php?command=2");
                     exit();
                 } else {
-                   
                     echo "There was an error adding the new gallery item.";
                 }
                 break;
-        default:
-        $featuredBeaches = $this->getFeaturedBeaches(); 
-            include_once('view/home.php');
-            break;       
+            case 'search':
+                // Handle search functionality
+                $query = isset($_REQUEST['search_query']) ? trim($_REQUEST['search_query']) : '';
+                if (!empty($query)) {
+                    $galleryItems = $this->model->searchGallery($query);
+                } else {
+                    $galleryItems = $this->model->getGallery();
+                }
+                include_once('view/gallery.php');
+                break;
+            default:
+                // Default case: Show featured beaches on the home page
+                $featuredBeaches = $this->getFeaturedBeaches(); 
+                include_once('view/home.php');
+                break;
+        }
     }
-}
 
-public function getGalleryData() {
-    return $this->model->getGallery();
-}
-public function getFeaturedBeaches(){
-    return $this->featuredBeach->getFeaturedBeaches();
-}
-    
+    public function getGalleryData() {
+        return $this->model->getGallery();
+    }
+
+    public function getFeaturedBeaches() {
+        return $this->featuredBeach->getFeaturedBeaches();
+    }
 
     public function addMessage() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
@@ -112,7 +116,7 @@ public function getFeaturedBeaches(){
             $subject = htmlspecialchars(trim($_POST['subject']));
             $message = htmlspecialchars(trim($_POST['message']));
 
-             if ($this->message->addMessage($name, $email, $subject, $message)) {
+            if ($this->message->addMessage($name, $email, $subject, $message)) {
                 $_SESSION['status'] = 'success';
             } else {
                 $_SESSION['status'] = 'error';
@@ -121,6 +125,4 @@ public function getFeaturedBeaches(){
             exit();
         }
     }
-
-
 }
