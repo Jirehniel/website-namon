@@ -1,11 +1,9 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-/* About Us Banner */
 .about_us_banner {
     width: 100%;
     height: 100vh;
@@ -15,10 +13,34 @@
     background-attachment: fixed;
     position: relative;
 }
+.action-links {
+    display: flex;
+    gap: 10px; /* Space between the links */
+}
 
-/* Navbar */
+.action-links a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.action-links a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .action-links {
+        flex-direction: column; /* Stack vertically */
+    }
+}
+
 .navbar {
-    width: 85%;
+     width: 85%;
     padding: 35px 0;
     display: flex;
     align-items: center;
@@ -26,19 +48,22 @@
     position: relative;
     z-index: 1;
     font-size: large;
+  
+
 }
 
 .logo {
     width: 120px;
     cursor: pointer;
 }
+ 
 
-/* Navbar List */
 .navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
+ 
 }
 
 .navbar ul li a {
@@ -46,7 +71,7 @@
     color: #ffffff;
     text-transform: uppercase;
 }
-
+ 
 .navbar ul li::after {
     content: '';
     height: 3px;
@@ -62,11 +87,19 @@
     width: 100%;
 }
 
-/* Content Styling */
-.content,
-.content-home,
-.content-about,
-.content-contactus {
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    display: flex;
+    align-items: center;
+     background-size: cover;
+}
+.content-home {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -75,15 +108,46 @@
     color: #fff;
     font-family: "Cormorant Garamond", serif;
 }
-
-.content-home h1 {
+ .content-home h1 {
     font-size: 50px;
     margin: 20px;
     line-height: 0.5;
 }
+ .content-home p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    text-align: center;
+    color: #f1f1f1;
+}
+.content-about {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+}
 
-.content-home p,
-.content-about p,
+.content-contactus {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+        
+}
+
+/* .content-aboutus h1 {
+    font-size: 50px;
+    margin: 20px;
+} */
+
 .content-contactus p {
     max-width: 800px;
     margin: 20px auto;
@@ -93,8 +157,21 @@
     color: #f1f1f1;
 }
 
-/* Button Styles */
-button, .add-new-link {
+.content h1 {   
+    font-size: 50px;
+    margin: 20px;
+}
+
+.content p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+button {
     width: 200px;
     padding: 10px 0;
     text-align: center;
@@ -105,12 +182,10 @@ button, .add-new-link {
     color: #ffffff;
     cursor: pointer;
     position: relative;
-    transition: background-color 0.3s ease;
 }
 
-button:hover, .add-new-link:hover {
+button:hover {
     border: none;
-    background-color: #007bff;
 }
 
 button span {
@@ -128,8 +203,7 @@ button span {
 button:hover span {
     width: 100%;
 }
-
-/* Team Section */
+   
 .team_section h2 {
     font-size: 40px;
     padding-top: 10px;
@@ -144,8 +218,12 @@ button:hover span {
     flex-wrap: wrap;
 }
 
+.img_profile {
+    overflow: hidden;
+}
+
 .profile {
-    margin-top: 50px;
+  margin-top: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -184,13 +262,41 @@ button:hover span {
     margin-bottom: 20px;
 }
 
-/* Gallery Section */
+.socials a {
+    text-decoration: none;
+    color: #009688;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #004d40;
+}
+
 .gallery_section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);  
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);  
     padding: 50px 0;
     background-color: rgba(255, 255, 255, 0.85);
     text-align: center;
     width: 100%; 
+        
+}
+
+.gallery_text h2{
+        max-width: 800px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    text-align: center;
+    color: #9e5d5d;
+    
+}
+
+.gallery_section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
 .gallery_section h2 {
@@ -200,6 +306,8 @@ button:hover span {
 }
 
 .gallery_list {
+        display: flex;              /* Enable flexbox layout */
+
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 40px;  
@@ -224,6 +332,12 @@ button:hover span {
     width: 100%; 
 }
 
+.gallery_title {
+    font-size: 20px;
+    color: #ffffff; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 .gallery_item:hover {
     transform: scale(1.05);
 }
@@ -235,10 +349,13 @@ button:hover span {
     border-radius: 10px;
     margin-bottom: 3%;
  }
+ 
 
 .gallery_item img:hover {
     transform: scale(1.1);
 }
+
+ 
 
 .gallery_item p {
     font-size: 16px;
@@ -248,7 +365,6 @@ button:hover span {
     font-weight: 500;
 }
 
-/* Scroll Top Button */
 .scroll_top_button {
     position: fixed;
     bottom: 20px;
@@ -272,7 +388,6 @@ button:hover span {
     color: #ccc;
 }
 
-/* Contact Section */
 .contact_container {
     padding: 20px;
     max-width: 1000px;
@@ -286,8 +401,42 @@ button:hover span {
 
 .contact_container h2 {
     font-size: 22px;
-    color: #ffffff;
+     color: #ffffff;
+         line-height: 0.0;
+
 }
+
+.contact_container p {
+    font-size:10px;
+     color: #ffffff;
+    line-height: 0.0;
+}
+
+.contact_container p a {
+    color: #1c056e; /* Change to the desired color */
+    text-decoration: none; /* Optional: remove the underline */
+}
+
+.contact_content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0px;
+    
+}
+
+.contact_form {
+    flex: 1;
+}
+
+.contact_form .form_group {
+    margin-bottom: 20px;
+}
+ .checkbox-description {
+    margin-top: 5px; /* Space between the checkbox and description */
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #555; /* Gray color for the description */
+}
+
 
 .contact_form input,
 .contact_form textarea {
@@ -296,6 +445,11 @@ button:hover span {
     border: 1px solid #ffffff;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+.map {
+    flex: 1;
+    padding-left: 20px;
 }
 
 .map_container {
@@ -312,7 +466,6 @@ button:hover span {
     border: none;
 }
 
-/* Footer */
 footer {
     background-color: #006492;
     padding: 10px 0;
@@ -327,81 +480,111 @@ footer {
 }
 
 .footer_content a {
-    color: #fff;
+    color: #0f0f0f;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .footer_content a:hover {
-    color: #009688;
+    color: #004d40;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none;
-    }
-
-    .navbar.active ul {
-        display: block;
-    }
-
-    .team_profiles {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gallery_list {
-        grid-template-columns: 1fr;
-    }
+.social_media img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Search Bar Container */
+.social_media img:hover {
+    transform: scale(1.1);
+}
+
+.add-new-container {
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
+}
+
+.add-new-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-new-link:hover {
+    background-color: #0056b3;
+}
+
+.plus-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Search Container Styling */
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 20px; /* space from the top */
+    padding: 10px 20px; /* padding around the search box */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
+    border-radius: 50px; /* rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
-/* Search Input */
-.search-input {
-    width: 300px;
-    padding: 10px;
+/* Container for the search form */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Style for the form */
+form {
+    display: flex;
+    border: 2px solid #007bff;
     border-radius: 25px;
-    border: 2px solid #009688;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the input field */
+input[type="text"] {
+    width: 250px;
+    padding: 8px;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px;
     font-size: 16px;
     outline: none;
-    margin-right: 10px;
 }
 
-/* Search Button */
-.search-button {
-    padding: 10px 20px;
-    border-radius: 25px;
-    background-color: #009688;
+/* Style for the search button */
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
     color: white;
     border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.search-button:hover {
-    background-color: #007bff;
-}
-
-.search-button span {
-    background: #009688;
-    height: 100%;
-    width: 0;
     border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.search-button:hover span {
-    width: 100%;
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3;
 }
+
+/* Placeholder text style */
+input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+
