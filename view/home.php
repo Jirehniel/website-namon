@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Beaches in the Philippines</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home/home.css">
 </head>
 <body>
 
@@ -21,7 +21,8 @@
           </div>
             
 <!-- Featured Beaches Section -->
-    <div class="gallery_section">
+        <div class="background-image-beaches">
+    
         <h2>FEATURED BEACHES</h2>
         <ul class="gallery_list">
             <?php if (!empty($featuredBeaches)): ?>
@@ -39,7 +40,7 @@
             <?php endif; ?>
         </ul>
     </div>
- 
+          
 
     <!-- Gallery Section -->
      <!-- <div class="gallery_section">
@@ -62,9 +63,7 @@
             </li>
          </ul>
     </div> -->
-
-    <div class="about_us_banner">
-
+     <div class="about_us_banner">
         <div class="team_section">
             <h2>Meet the Coders</h2>
             <div class="team_profiles">
@@ -96,8 +95,6 @@
 
 
   
-
-    <!-- Footer -->
-    <script src="../js/footer.js"></script>
+ 
 </body>
 </html>

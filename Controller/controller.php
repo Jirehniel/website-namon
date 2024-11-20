@@ -59,7 +59,35 @@ class Controller
                 $id = $_REQUEST['galleryID'];
                 $name = $_REQUEST['name'];
                 $description = $_REQUEST['description'];
-                $image_url = $_POST['image_url'];
+                if (isset($_FILES['image_upload']) && $_FILES['image_upload']['error'] === UPLOAD_ERR_OK) {
+                    $fileTmpPath = $_FILES['image_upload']['tmp_name'];
+                    $fileName = $_FILES['image_upload']['name'];
+                    $fileNameCmps = explode(".", $fileName);
+                    $fileExtension = strtolower(end($fileNameCmps));
+                
+                    // Allowed file extensions
+                    $allowedfileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                    if (in_array($fileExtension, $allowedfileExtensions)) {
+                        // Set upload directory and unique file name
+                        $uploadFileDir = './uploads/';
+                        $newFileName = uniqid() . '.' . $fileExtension;
+                        $dest_path = $uploadFileDir . $newFileName;
+                
+                        // Move the uploaded file
+                        if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                            $image_url = $dest_path; // Save the file path to the database
+                        } else {
+                            echo "Error moving the uploaded file.";
+                            $image_url = $_POST['existing_image_url'] ?? ''; // Fallback
+                        }
+                    } else {
+                        echo "Invalid file type. Allowed types: " . implode(", ", $allowedfileExtensions);
+                        $image_url = $_POST['existing_image_url'] ?? ''; // Fallback
+                    }
+                } else {
+                    $image_url = $_POST['existing_image_url'] ?? ''; // Fallback if no file uploaded
+                }
+                
                 $google_maps_link = $_REQUEST['google_maps_link'];
                 $facebook_link = $_REQUEST['facebook_link'];
                 $featured = isset($_POST['featured']) ? 1 : 0;
@@ -70,7 +98,36 @@ class Controller
             case 'addNewRec':
                 $name = $_POST['name'];
                 $description = $_POST['description'];
-                $image_url = $_POST['image_url'];
+                if (isset($_FILES['image_upload']) && $_FILES['image_upload']['error'] === UPLOAD_ERR_OK) {
+                    $fileTmpPath = $_FILES['image_upload']['tmp_name'];
+                    $fileName = $_FILES['image_upload']['name'];
+                    $fileNameCmps = explode(".", $fileName);
+                    $fileExtension = strtolower(end($fileNameCmps));
+                
+                    // Allowed file extensions
+                    $allowedfileExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                    if (in_array($fileExtension, $allowedfileExtensions)) {
+                        // Set upload directory and unique file name
+                        $uploadFileDir = './uploads/';
+                        $newFileName = uniqid() . '.' . $fileExtension;
+                        $dest_path = $uploadFileDir . $newFileName;
+                
+                        // Move the uploaded file
+                        if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                            $image_url = $dest_path; // Save the file path to the database
+                        } else {
+                            echo "Error moving the uploaded file.";
+                            $image_url = $_POST['existing_image_url'] ?? ''; // Fallback
+                        }
+                    } else {
+                        echo "Invalid file type. Allowed types: " . implode(", ", $allowedfileExtensions);
+                        $image_url = $_POST['existing_image_url'] ?? ''; // Fallback
+                    }
+                } else {
+                    $image_url = $_POST['existing_image_url'] ?? ''; // Fallback if no file uploaded
+                }
+                
+            
                 $google_maps_link = $_POST['google_maps_link'];
                 $facebook_link = $_POST['facebook_link'];
                 $featured = isset($_POST['featured']) ? 1 : 0;

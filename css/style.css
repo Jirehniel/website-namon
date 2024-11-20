@@ -13,9 +13,11 @@
     background-attachment: fixed;
     position: relative;
 }
+
 .action-links {
     display: flex;
-    gap: 10px; /* Space between the links */
+    gap: 10px;
+    /* Space between the links */
 }
 
 .action-links a {
@@ -25,7 +27,8 @@
     color: #007BFF;
     border-radius: 4px;
     transition: background-color 0.3s;
-    cursor: pointer; /* Add pointer cursor */
+    cursor: pointer;
+    /* Add pointer cursor */
 }
 
 .action-links a:hover {
@@ -35,13 +38,14 @@
 
 @media (max-width: 600px) {
     .action-links {
-        flex-direction: column; /* Stack vertically */
+        flex-direction: column;
+        /* Stack vertically */
     }
 }
 
 
 .navbar {
-     width: 85%;
+    width: 85%;
     padding: 35px 0;
     display: flex;
     align-items: center;
@@ -49,7 +53,7 @@
     position: relative;
     z-index: 1;
     font-size: large;
-  
+
 
 }
 
@@ -57,14 +61,14 @@
     width: 120px;
     cursor: pointer;
 }
- 
+
 
 .navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
- 
+
 }
 
 .navbar ul li a {
@@ -72,7 +76,7 @@
     color: #ffffff;
     text-transform: uppercase;
 }
- 
+
 .navbar ul li::after {
     content: '';
     height: 3px;
@@ -98,8 +102,9 @@
     font-family: "Cormorant Garamond", serif;
     display: flex;
     align-items: center;
-     background-size: cover;
+    background-size: cover;
 }
+
 .content-home {
     width: 100%;
     position: absolute;
@@ -109,12 +114,14 @@
     color: #fff;
     font-family: "Cormorant Garamond", serif;
 }
- .content-home h1 {
+
+.content-home h1 {
     font-size: 50px;
     margin: 20px;
     line-height: 0.5;
 }
- .content-home p {
+
+.content-home p {
     max-width: 800px;
     margin: 20px auto;
     font-weight: 100;
@@ -122,6 +129,7 @@
     text-align: center;
     color: #f1f1f1;
 }
+
 .content-about {
     width: 100%;
     position: absolute;
@@ -141,13 +149,13 @@
     text-align: center;
     color: #fff;
     font-family: "Cormorant Garamond", serif;
-        
+
 }
 
-/* .content-aboutus h1 {
+.content-about h2 {
     font-size: 50px;
     margin: 20px;
-} */
+}
 
 .content-contactus p {
     max-width: 800px;
@@ -158,7 +166,7 @@
     color: #f1f1f1;
 }
 
-.content h1 {   
+.content h1 {
     font-size: 50px;
     margin: 20px;
 }
@@ -183,6 +191,10 @@ button {
     color: #ffffff;
     cursor: pointer;
     position: relative;
+    /* Make sure button is positioned correctly */
+    z-index: 1;
+    overflow: hidden;
+    /* Ensure it's above other elements */
 }
 
 button:hover {
@@ -204,7 +216,8 @@ button span {
 button:hover span {
     width: 100%;
 }
-   
+
+
 .team_section h2 {
     font-size: 40px;
     padding-top: 10px;
@@ -225,7 +238,7 @@ button:hover span {
 }
 
 .profile {
-  margin-top: 50px;
+    margin-top: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -277,22 +290,25 @@ button:hover span {
 }
 
 .gallery_section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);
     padding: 50px 0;
     background-color: rgba(255, 255, 255, 0.85);
     text-align: center;
-    width: 100%; 
-        
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
 }
 
-.gallery_text h2{
-        max-width: 800px;
+.gallery_text h2 {
+    max-width: 800px;
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
     text-align: center;
     color: #9e5d5d;
-    
+
 }
 
 .gallery_section h2 {
@@ -308,21 +324,24 @@ button:hover span {
 }
 
 .gallery_list {
-        display: flex;              /* Enable flexbox layout */
+    display: flex;
+    /* Enable flexbox layout */
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 40px;  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     list-style-type: none;
     padding: 0;
     margin: 50px auto;
-    max-width: 1200px;  
+
+    max-width: 1200px;
 }
 
 .gallery_item {
     background-color: rgba(239, 239, 239, 0.3);
     border-radius: 10px;
     padding: 15px;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,34 +349,93 @@ button:hover span {
     color: white;
     overflow: hidden;
     transition: transform 0.3s ease;
-    height: 450px; 
-    width: 100%; 
+    height: 100%;
+    width: 100%;
 }
 
 .gallery_title {
     font-size: 20px;
-    color: #ffffff; 
+    color: #ffffff;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .gallery_item:hover {
     transform: scale(1.05);
 }
 
 .gallery_item img {
     width: 100%;
-    max-height: 300px;  
+    max-height: 300px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 3%;
- }
- 
+}
+
+
+/* Container for the dots menu */
+.menu-container {
+    position: absolute;
+    top: 10px;
+
+    right: -80;
+
+    z-index: 1;
+}
+
+.menu-dots {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: auto;
+
+    right: 0;
+}
+
+.menu-dots:focus {
+    outline: none;
+}
+
+/* Contextual menu */
+.contextual-menu {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 100;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 0;
+}
+
+/* Show menu on hover or focus */
+.menu-container:focus-within .contextual-menu,
+.menu-container:hover .contextual-menu {
+    display: block;
+}
+
+.contextual-menu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.contextual-menu a:hover {
+    background-color: #f0f0f0;
+}
 
 .gallery_item img:hover {
     transform: scale(1.1);
 }
 
- 
+
 
 .gallery_item p {
     font-size: 16px;
@@ -382,27 +460,29 @@ button:hover span {
 
 .contact_container h2 {
     font-size: 22px;
-     color: #ffffff;
-         line-height: 0.0;
+    color: #ffffff;
+    line-height: 0.0;
 
 }
 
 .contact_container p {
-    font-size:10px;
-     color: #ffffff;
+    font-size: 10px;
+    color: #ffffff;
     line-height: 0.0;
 }
 
 .contact_container p a {
-    color: #1c056e; /* Change to the desired color */
-    text-decoration: none; /* Optional: remove the underline */
+    color: #1c056e;
+    /* Change to the desired color */
+    text-decoration: none;
+    /* Optional: remove the underline */
 }
 
 .contact_content {
     display: flex;
     justify-content: space-evenly;
     margin-top: 0px;
-    
+
 }
 
 .contact_form {
@@ -412,10 +492,14 @@ button:hover span {
 .contact_form .form_group {
     margin-bottom: 20px;
 }
- .checkbox-description {
-    margin-top: 5px; /* Space between the checkbox and description */
-    font-size: 0.9em; /* Slightly smaller text */
-    color: #555; /* Gray color for the description */
+
+.checkbox-description {
+    margin-top: 5px;
+    /* Space between the checkbox and description */
+    font-size: 0.9em;
+    /* Slightly smaller text */
+    color: #555;
+    /* Gray color for the description */
 }
 
 
@@ -482,9 +566,22 @@ footer {
     transform: scale(1.1);
 }
 
-.add-new-container {
+.background-image-beaches {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);
+}
+
+
+.add-new-container {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);
 }
 
 .add-new-link {
@@ -508,49 +605,28 @@ footer {
 
 
 /* Target only the button inside the search form */
-.search-container form button {
-    width: 200px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #ffffff;
-    cursor: pointer;
-    position: relative;
-}
+/* Target only the button inside the search form */
 
-.search-container form button:hover {
-    border: none; 
-}
 
-.search-container form button span {
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.2s;
-}
-
-.search-container form button:hover span {
-    width: 100%;
-}
 
 /* Optional: style the search input field */
 .search-container form input[type="text"] {
-    padding: 8px;               /* Padding inside the input */
-    font-size: 16px;            /* Font size */
-    width: 250px;               /* Set width for the input */
-    border-radius: 25px;        /* Rounded corners */
-    border: none;               /* No border */
-    outline: none;              /* Remove outline on focus */
-    color: white;               /* Text color */
-    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    padding: 8px;
+    /* Padding inside the input */
+    font-size: 16px;
+    /* Font size */
+    width: 250px;
+    /* Set width for the input */
+    border-radius: 25px;
+    /* Rounded corners */
+    border: none;
+    /* No border */
+    outline: none;
+    /* Remove outline on focus */
+    color: white;
+    /* Text color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
 }
 
 /* Style for the search container */
@@ -558,19 +634,29 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/background.jpg);
 }
+
 /* Style for the form */
 .search-container form {
     display: flex;
-    border: 2px solid #007bff;  /* Border around the form */
-    border-radius: 25px;        /* Rounded corners for form */
-    padding: 10px;               /* Padding around the form */
-    background-size: cover;      /* Cover the entire background */
+    border: 2px solid #007bff;
+    /* Border around the form */
+    border-radius: 25px;
+    /* Rounded corners for form */
+    padding: 10px;
+    /* Padding around the form */
+    background-size: cover;
+    /* Cover the entire background */
 }
 
 /* Placeholder text style */
 .search-container form input::placeholder {
-    color: #888;                /* Placeholder color */
-    font-style: italic;         /* Italic font style for placeholder */
+    color: #888;
+    /* Placeholder color */
+    font-style: italic;
+    /* Italic font style for placeholder */
 }
