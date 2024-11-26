@@ -26,18 +26,21 @@
         </div>
 
         <!-- Display Current Image -->
-        <?php if (!empty($galleryItem->image_url)): ?>
-            <div class="form_group">
-                <label>Current Image:</label>
-                <img src="<?php echo htmlspecialchars($galleryItem->image_url); ?>" alt="Current Image" style="max-width: 200px;">
-            </div>
-        <?php endif; ?>
+    <?php if (!empty($galleryItem->image_url)) : ?>
+                            <div class="form_group">
+                                <label>Current Image:</label>
+                                <img src="<?php echo htmlspecialchars($galleryItem->image_url); ?>" alt="Current Image" style="max-width: 10%; height: 10%;">
+                            </div>
+                        <?php endif; ?>
+        
 
         <!-- File input for new image upload -->
-        <div class="form_group">
-            <label for="image_upload">Upload New Image:</label>
-            <input type="file" id="image_upload" name="image_upload" accept="image/*">
-        </div>
+                   <div class="form_group">
+                            <label for="image_upload">Upload New Image:</label>
+                            <input type="file" id="image_upload" name="image_upload" accept="image/*">
+                            <input type="hidden" name="existing_image_url" value="<?php echo htmlspecialchars($galleryItem->image_url); ?>">
+                        </div>
+
 
         <div class="form_group">
             <label for="google_maps_link">Google Maps Link:</label> 

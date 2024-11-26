@@ -29,7 +29,7 @@ class Model
     }
 
     // Fetch only featured beaches
-    public function getFeaturedBeaches()
+    public function getFeaturedBeachess()
     {
         $data = array();
         $queryGetFeatured = mysqli_query($this->db, "SELECT * FROM gallery WHERE featured = TRUE");
@@ -40,20 +40,40 @@ class Model
 
         return $data;
     }
+      	// $deleteQuery="DELETE from tblbooks where isbn=$isbn";
+		
+		// $result = mysqli_query($this->db,$deleteQuery);
+		
+		// if(!$result)
+		// 	return mysqli_error($this->db);
+		// else
+		// 	return "Record Deleted";
 
     // Delete a gallery item by its ID
-    public function deleteRecord($id)
-    {
-        $deleteQuery = "DELETE FROM gallery WHERE galleryID = ?";
-        $stmt = $this->db->prepare($deleteQuery);
-        $stmt->bind_param('i', $id);
+public function deleteRecord($id)
+{
+    // Prepare the query to fetch the record
+    $selectQuery = "SELECT * FROM gallery WHERE galleryID = ?";
+    $stmt = $this->db->prepare($selectQuery);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if ($stmt->execute()) {
-            return "Record deleted successfully";
-        } else {
-            return mysqli_error($this->db);
+    if ($result && $result->num_rows > 0) {
+        $record = $result->fetch_object();
+        $image_url = $record->image_url;
+
+        if (file_exists($image_url)) {
+            unlink($image_url);
         }
     }
+
+    // Prepare the query to delete the record
+    $deleteQuery = "DELETE FROM gallery WHERE galleryID = ?";
+    $stmt = $this->db->prepare($deleteQuery);
+    $stmt->bind_param('i', $id);
+    return $stmt->execute();
+}
 
     // Fetch a gallery item by its ID
     public function getGalleryItemByID($id)

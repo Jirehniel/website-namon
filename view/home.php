@@ -10,7 +10,7 @@
 <body>
 
       <div class="content-home">
-            <h1>Best Beaches in the Philippinessss</h1>
+            <h1>Best Beaches in the Philippines</h1>
             <p>Welcome to paradise! 🌴 Dive into a world of sun, sand, and sea as we take you on a virtual tour of the most stunning beaches in the Philippines. From the pristine white sands of Boracay to the hidden gems of Palawan, get ready to explore and be inspired. Click below to start your journey to the ultimate beach escape!</p>
             <div>
                 <a href="index.php?command=2">

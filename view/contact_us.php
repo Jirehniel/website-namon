@@ -25,7 +25,7 @@
         <div class="contact_content">
              <div class="contact_form">
                 <h3>Send Us a Message</h3>
-                <form action="sumbitform.php" method="POST">
+                <form action="" method="POST">
                     <div class="form_group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
